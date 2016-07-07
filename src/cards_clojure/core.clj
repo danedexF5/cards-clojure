@@ -52,14 +52,10 @@
         ;(sort (map :rank hand))
    ; (= sorted (take 4 (iterate inc min-value)))))
 
-(defn -main [& args]
-  (time (let [deck (create-deck)
-              hands (create-hands deck)
-              hands (filter flush? hands)]
-          (println (count hands)))))
+(defn -main []
+  (let [deck (create-deck)
+        hands (create-hands deck)
+        flush-hands (filter flush? hands)]
+    (println (count flush-hands))))
 
-;(defn -main []
-  ;(let [deck (create-deck)
-        ;hands (create-hands deck)
-        ;flush-hands (filter flush? hands)
-    ;(println (count flush-hands))))
+
